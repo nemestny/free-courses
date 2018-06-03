@@ -1,1 +1,1 @@
-puts ARGV[0].downcase.gsub(/\W/,'').eql?(ARGV[0].downcase.gsub(/\W/,'').reverse) ? 'YES' : 'NO'
+puts ARGV[0].gsub(/\W/,'').casecmp(ARGV[0].gsub(/\W/,'').reverse) == 0 ? 'YES' : 'NO'
