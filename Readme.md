@@ -6,21 +6,21 @@
 На вход подается строка ASCII символов длины `n. 1 <= n <= 10000`
 
 ### Пример
-> ruby task.rb 'Was it a car or a cat I saw?'
-> YES
+    ruby task.rb 'Was it a car or a cat I saw?'
+    YES
 
 ## 2. Фибоначчи
 Написать функцию расчета n-ного числа Фибоначчи. `f0 = 0, f1 = 1, f2 = 1`
 На вход подается число n. `-10000 <= n <= 10000`
 
 ### Пример
-> ruby task.rb 9
-> 34
+    ruby task.rb 9
+    34
 
 ## 3. Разделение строки
 Разделить входную строку длины n на 3: глассные a, согласные b, цифры c.
 На вход подается строка в формате ASCII. `1 <= n <= 10000`
 
 ### Пример входного файла
-> ruby task.rb 'Hello World!'
-> eoo HllWrld
+    ruby task.rb 'Hello World!'
+    eoo HllWrld
