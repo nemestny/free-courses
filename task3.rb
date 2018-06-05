@@ -1,4 +1,4 @@
-str = ARGV.join
+str = ARGV[0]
 vowels = str.scan(/[AaEeIiOoUu]/)
 digits = str.scan(/\d/)
 consonant = str.scan(/\w/) - vowels - digits
