@@ -1,16 +1,7 @@
 str = ARGV[0].gsub(/\W/,'')
-a = ''
-b = ''
-c = ''
 
-str.each_char do |char| 
-	if char.gsub(/[aeiou]/i,'').empty?
-		a = a + char
-	elsif char.gsub(/\d/,'').empty?  
-		c = c + char
-	else
-		b = b + char
-	end
-end
+a = str.scan(/[aeiou]/i).join
+b = str.scan(/[^aeiou0-9\W]/i).join
+c = str.scan(/\d/).join
 
 puts ("#{a}" + (b.empty? ? '': ' ') + "#{b} #{c}").strip
