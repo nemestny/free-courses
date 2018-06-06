@@ -13,4 +13,4 @@ str.each_char do |char|
 	end
 end
 
-puts "#{a} #{b} #{c}"
+puts ("#{a}" + (b.empty? ? '': ' ') + "#{b} #{c}").strip
