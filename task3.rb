@@ -1,7 +1,16 @@
-str = ARGV[0]
-vowels = str.scan(/[AaEeIiOoUu]/)
-digits = str.scan(/\d/)
-consonant = str.scan(/\w/) - vowels - digits
-output = vowels + (vowels.length > 0 && consonant.length > 0 ? [' '] + consonant : consonant)
-output = output + (output.length > 0 && digits.length > 0 ? [' '] + digits : digits)
-puts output.join
+str = ARGV[0].gsub(/\W/,'')
+a = ''
+b = ''
+c = ''
+
+str.each_char do |char| 
+	if char.gsub(/[aeiou]/i,'').empty?
+		a = a + char
+	elsif char.gsub(/\d/,'').empty?  
+		c = c + char
+	else
+		b = b + char
+	end
+end
+
+puts ("#{a}" + (b.empty? ? '': ' ') + "#{b} #{c}").strip
