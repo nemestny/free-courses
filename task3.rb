@@ -4,9 +4,10 @@ b = ''
 c = ''
 
 str.each_char do |char| 
-	if "AaEeIiOoUu".include? char
+	# if "AaEeIiOoUu".include? char
+	if char.gsub(/[aeiou]/i,'').empty?
 		a = a + char
-	elsif char.gsub(/\d/,'') == ''  
+	elsif char.gsub(/\d/,'').empty?  
 		c = c + char
 	else
 		b = b + char
