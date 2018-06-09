@@ -1,5 +1,13 @@
-def f n
-	pos = n.positive? ? 1 : -1
-	(-1..1).include?(n)? n.abs : pos*f(n-1*pos) + f(n-2*pos)
+def fibonacci(n,fib_hash = Hash.new)
+	if fib_hash[n]
+		fib_hash[n]
+	elsif (-1..1).include?(n)
+		fib_hash[n] = n.abs
+	elsif n.positive?
+		fib_hash[n] = fibonacci(n-2,fib_hash) + fibonacci(n-1,fib_hash)
+	else
+		fib_hash[n] = fibonacci(n+2,fib_hash) - fibonacci(n+1,fib_hash)	
+	end
 end
-puts f(ARGV[0].to_i)
+
+puts fibonacci(ARGV[0].to_i)
