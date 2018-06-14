@@ -1,1 +1,1 @@
-puts (ARGV[0].scan(/[aeiouy]/i)+[' ']+ARGV[0].scan(/[^aeiouy\d\W]/i)+[' ']+ARGV[0].scan(/\d/)).join.strip
+puts (ARGV[0].scan(/[aeiouy]/i)+[' ']+ARGV[0].scan(/[^aeiouy\d\W]/i)+[' ']+ARGV[0].scan(/\d/)).join
