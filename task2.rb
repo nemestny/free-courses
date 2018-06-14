@@ -1,4 +1,4 @@
-def f(n,f_hash = {-1 => 1, 0 => 0, 1 => 1})
+def f(n,f_hash = {0 => 0, 1 => 1, 2 => 1})
 	if f_hash[n]
 		f_hash[n]
 	elsif n.negative?
