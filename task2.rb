@@ -1,4 +1,4 @@
-def f(n,f_hash = {0 => 0, 1 => 1, 2 => 1})
+def f(n,f_hash)
 	if f_hash[n]
 		f_hash[n]
 	elsif n.negative?
@@ -7,4 +7,4 @@ def f(n,f_hash = {0 => 0, 1 => 1, 2 => 1})
 		f_hash[n] = f(n-2,f_hash) + f(n-1,f_hash)	
 	end
 end
-puts f(ARGV[0].to_i)
+puts f(ARGV[0].to_i,{0 => 0, 1 => 1, 2 => 1})
