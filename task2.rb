@@ -4,7 +4,9 @@ def f n
 	f2 = 1
 	fi = 0
 
-	if n.negative?
+	if (1..2).include?(n)
+		fi = 1
+	elsif n.negative?
 		-1.downto(n) do |i|
 			fi = f1 - f0
 			f1 = f0
@@ -17,7 +19,6 @@ def f n
 			f2 = fi
 		end
 	end
-	
 	fi
 end
 
