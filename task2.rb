@@ -1,25 +1,21 @@
 def f n
-	f0 = 0
-	f1 = 1
-	f2 = 1
-	fi = 0
+	f = [0,1,1]
 
-	if (1..2).include?(n)
-		fi = 1
+	if (0..2).include?(n)
+		f[n]
 	elsif n.negative?
-		-1.downto(n) do |i|
-			fi = f1 - f0
-			f1 = f0
-			f0 = fi
+		-1.downto(n) do
+			f[0] = f[1] - f[0]
+			f[1] = f[1] - f[0]
 		end
+		f[0]
 	else
-		3.upto(n) do |i|
-			fi = f2 + f1
-			f1 = f2
-			f2 = fi
+		3.upto(n) do
+			f[2] = f[2] + f[1]
+			f[1] = f[2] - f[1]
 		end
+		f[2]
 	end
-	fi
 end
 
 puts f(ARGV[0].to_i)
