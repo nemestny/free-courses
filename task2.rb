@@ -1,17 +1,25 @@
-def fib_wrap(num)
-  num < 0 ? ((-1)**(num + 1)) * fib(num.abs)[0] : fib(num)[0]
+def f n
+	f0 = 0
+	f1 = 1
+	f2 = 1
+	fi = 0
+
+	if (1..2).include?(n)
+		fi = 1
+	elsif n.negative?
+		-1.downto(n) do |i|
+			fi = f1 - f0
+			f1 = f0
+			f0 = fi
+		end
+	else
+		3.upto(n) do |i|
+			fi = f2 + f1
+			f1 = f2
+			f2 = fi
+		end
+	end
+	fi
 end
 
-def fib(n)
-  if n == 0
-    return [0, 1]
-  else
-    n1, n2 = fib(n / 2)
-    a = n1 * (n2 * 2 - n1)
-    b = n1 * n1 + n2 * n2
-
-    ( n % 2 == 0 ) ? [a, b] : [b, a + b]
-  end
-end
-
-puts fib_wrap(ARGV[0].to_i)
+puts f(ARGV[0].to_i)
